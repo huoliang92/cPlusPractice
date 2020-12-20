@@ -1,0 +1,14 @@
+
+[1]直接在终端敲这个命令
+g++ main.cpp coutSome.cpp -o main.exe
+然后./main.cpp
+
+[2]本质原因：使用code runner 插件时候，默认编译一个文件
+可以修改 插件的json值
+
+    "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
+    "cpp": "cd $dir && g++ *.cpp -o $fileNameWithoutExt && $dir$fileNameWithoutExt", //改成了*.cpp
+
+    "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",//以前是这样得
+
+[3] 正常应该是写一个Cmake文件，然后让 tasks.json里面的东西按照cmake的编译顺序运行，这个有空再研究

@@ -1,12 +1,11 @@
+#include"coutSome.h"
 #include <iostream>
+using namespace std;
+
 int main()
 {
-    using namespace std;
     cout << "Enter for add " << endl;
-    for (int i = 0; i < 10; i++)
-    {
-        cout << i << endl;
-    }
+    justForLoop();
     cin.get();
     return 0;
 }
